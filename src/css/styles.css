@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0B131E;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+.error_message {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  flex-direction: column;
+}
+.error_message h1 {
+  font-size: 40px;
+}
+
+.main_container {
+  width: 100%;
+  max-height: 100vh;
+  padding: 30px;
+  font-family: "Inter", sans-serif;
+  display: flex;
+  gap: 10px;
+
+}
+.main_container .today {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main_container .today .search_container {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+}
+.main_container .today .search_container .search {
+  flex-grow: 1;
+  position: relative;
+}
+.main_container .today .search_container .search input {
+  padding-left: 20px;
+  font-size: 18px;
+  border: none;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  z-index: 2;
+}
+.main_container .today .search_container .search .suggestions {
+  border-radius: 20px;
+  position: absolute;
+  top: 40%;
+  z-index: 1;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  padding-top: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.main_container .today .search_container .search .suggestions .city {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  cursor: pointer;
+  background-color: #202b3b;
+  border: none;
+  border-radius: 10px;
+}
+.main_container .today .search_container .search .suggestions .city h2 {
+  font-size: 28px;
+  color: rgba(255, 255, 255, 0.78);
+  font-family: "Inter", sans-serif;
+  transition: 0.3s ease all;
+}
+.main_container .today .search_container .search .suggestions .city h2 span {
+  font-size: 20px;
+  font-weight: 400;
+}
+.main_container .today .search_container .search .suggestions .city:hover h2 {
+  letter-spacing: 1px;
+}
+.main_container .today .search_container .search_btn {
+  height: 100%;
+  width: 100px;
+  font-size: 18px;
+  background-color: #202b3b;
+  border: none;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.main_container .today .header {
+  width: 100%;
+  padding: 30px 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 320px;
+  flex-grow: 1;
+}
+.main_container .today .header h1 {
+  font-size: 48px;
+}
+.main_container .today .header p {
+  color: rgba(255, 255, 255, 0.6);
+}
+.main_container .today .header h2 {
+  font-size: 76px;
+}
+.main_container .today .header .header_text {
+  display: flex;
+  height: 90%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.main_container .today .header .header_icon img {
+  width: 220px;
+}
+.main_container .today .today_foracast {
+  background-color: #202B3B;
+  padding: 30px 40px;
+  border-radius: 20px;
+  flex-grow: 1;
+}
+.main_container .today .today_foracast h3 {
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+.main_container .today .today_foracast .forecast_flex {
+  display: flex;
+  margin-inline: 50px;
+  justify-content: space-around;
+}
+.main_container .today .today_foracast .forecast_flex .hour_forecast {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.main_container .today .today_foracast .forecast_flex .hour_forecast img {
+  width: 90px;
+}
+.main_container .today .today_foracast .forecast_flex .hour_forecast span {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 600;
+  letter-spacing: 1.4px;
+}
+.main_container .today .today_foracast .forecast_flex .hour_forecast p {
+  font-size: 22px;
+  font-weight: 700;
+}
+.main_container .today .conditions {
+  background-color: #202B3b;
+  border-radius: 20px;
+  padding: 30px 40px;
+}
+.main_container .today .conditions h3 {
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+.main_container .today .conditions_flex {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  margin-inline: 35px;
+}
+.main_container .today .conditions_flex .condition {
+  width: 50%;
+  margin-bottom: 15px;
+}
+.main_container .today .conditions_flex .condition i {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.main_container .today .conditions_flex .condition p {
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+.main_container .today .conditions_flex .condition span {
+  font-size: 20px;
+  margin-left: 34px;
+  font-size: 26px;
+  font-weight: 600;
+}
+.main_container .today .conditions_flex .condition div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.main_container .today .conditions_flex .minmax {
+  display: flex;
+  gap: 15px;
+  margin-left: 34px;
+}
+.main_container .today .conditions_flex .minmax div {
+  display: flex;
+  flex-direction: column;
+}
+.main_container .today .conditions_flex .minmax div span {
+  margin: 0;
+}
+.main_container .forecast_container {
+  flex-grow: 1;
+  background-color: #202B3b;
+  border-radius: 20px;
+  padding: 30px 40px;
+}
+.main_container .forecast_container h3 {
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+}
+.main_container .forecast_container .forecast_display {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.main_container .forecast_container .forecast_display .forecast {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 50px;
+}
+.main_container .forecast_container .forecast_display .forecast p {
+  font-size: 22px;
+  font-weight: 500;
+}
+.main_container .forecast_container .forecast_display .forecast .temp {
+  font-size: 20px;
+}
+.main_container .forecast_container .forecast_display .forecast .temp span {
+  color: rgba(255, 255, 255, 0.6);
+}
+.main_container .forecast_container .forecast_display .forecast div {
+  display: flex;
+  align-items: center;
+}
+.main_container .forecast_container .forecast_display .forecast div img {
+  width: 72px;
+}
+.main_container .forecast_container .forecast_display .forecast div p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+  width: 180px;
+}
+
+/*# sourceMappingURL=styles.css.map */
