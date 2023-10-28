@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 
-
+import Forecast from './Components/Forecast'
+import TodayForecast from './Components/TodayForecast'
+import Conditions from './Components/Conditions'
 
 function App() {
-
   const [data, setData] = useState()
   const [hourData, setHourData] = useState()
   const [date, setDate] = useState()
@@ -176,93 +177,10 @@ function App() {
                 <img src={resizeIcon(data.current.condition.icon)} alt="" />
               </div>
             </div>
-            <div className="today_foracast section">
-              <h3>Today's Forecast</h3>
-              <div className="forecast_flex">
-                {
-                  hourData.forecast.forecastday[0].hour.map((hour) => {
-                    let formatedHour = hour.time.split('').slice(-5, -3).join('')
-                    if(formatedHour % 3 === 0 && formatedHour > 5){
-                      return ( 
-                        <div key={hour.time} className="hour_forecast">
-                          <span>{hour.time.split('').slice(-5).join('')}</span>
-                          <img src={resizeIcon(hour.condition.icon)} alt="" />
-                          <p>{Math.round(hour.temp_c)}°</p>
-                        </div>
-                      )
-                    }
-                  })
-                }
-              </div>
-            </div>
-            <div className="conditions section">
-              <h3>Air Condition</h3>
-              <div className="conditions_flex">
-                <div className="condition">
-                  <div>
-                    <i className='bi bi-thermometer-half'></i>
-                    <p>Feels Like</p>
-                  </div>
-                  <span>{data.current.feelslike_c}°</span>
-                </div>
-                <div className="condition">
-                  <div>
-                    <i class="bi bi-cloud-rain"></i>
-                    <p>Chance of Rain</p>
-                  </div>
-                  <span>{hourData.forecast.forecastday[0].day.totalprecip_mm} mm</span>
-                </div>
-                <div className="condition">
-                  <div>
-                  <i class="bi bi-droplet"></i>
-                    <p>Humidity</p>
-                  </div>
-                  <span>{data.current.humidity}%</span>
-                </div>
-                <div className="condition">
-                  <div>
-                    <i class="bi bi-wind"></i>
-                    <p>Wind</p>
-                  </div>
-                  <span>{data.current.wind_kph} km/h</span>
-                </div>
-                <div className="condition">
-                  <div>
-                    <i className="bi bi-sun"></i>
-                    <p>UV Index</p>
-                  </div>
-                  <span>{data.current.uv}</span>
-                </div>
-                <div className="condition">
-                  <div>
-                    <i class="bi bi-cloud-sun"></i>
-                    <p>Cloud</p>
-                  </div>
-                  <span>{data.current.cloud} %</span>
-                </div>
-              </div>
-            </div>
+            <TodayForecast hourData={hourData} />
+            <Conditions hourData={hourData} data={data}/>
           </div>
-          <div className="forecast_container section">
-            <h3>3-DAY FORECAST</h3>
-            <div className="forecast_display">
-            {forecastData &&
-              forecastData.forecast.forecastday.map((day) => {
-                return (
-                  <div key={day.date} className="forecast">
-                    <p>{day.date.slice(-5)}</p>
-                    <div>
-                      <img src={day.day.condition.icon} alt="" />
-                      <p>{day.day.condition.text}</p>
-                    </div>
-                    <p className='temp'>{`${Math.round(day.day.maxtemp_c)}/`}<span>{`${Math.round(day.day.mintemp_c)}`}</span></p>
-                  </div>
-                )
-                
-              })
-            }
-            </div>
-          </div>
+         <Forecast forecastData={forecastData} />
           
         </div>
       </>

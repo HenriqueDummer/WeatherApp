@@ -47,16 +47,14 @@ body {
 }
 .main_container .section {
   padding: 30px 40px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.22);
+  background: rgba(255, 255, 255, 0.12);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8.4px);
-  -webkit-backdrop-filter: blur(8.4px);
   border: 1px solid rgba(255, 255, 255, 0.33);
 }
 .main_container .today {
-  width: 70%;
+  width: 65%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -236,6 +234,9 @@ body {
 .main_container .today .conditions_flex .minmax div span {
   margin: 0;
 }
+.main_container .forecast_container {
+  flex-grow: 1;
+}
 .main_container .forecast_container h3 {
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
@@ -276,6 +277,7 @@ body {
   font-size: 18px;
   color: rgba(255, 255, 255, 0.6);
   width: 180px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=styles.css.map */
