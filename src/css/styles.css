@@ -30,10 +30,33 @@ body {
   font-family: "Inter", sans-serif;
   display: flex;
   gap: 10px;
+  position: relative;
 
 }
+.main_container .glow_effect {
+  position: absolute;
+  box-shadow: 0 0 1800px 500px rgb(89, 39, 204);
+}
+.main_container .glow1 {
+  bottom: -100px;
+  left: 35%;
+}
+.main_container .glow2 {
+  right: 0;
+  top: 50%;
+}
+.main_container .section {
+  padding: 30px 40px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.4px);
+  -webkit-backdrop-filter: blur(8.4px);
+  border: 1px solid rgba(255, 255, 255, 0.33);
+}
 .main_container .today {
-  width: 65%;
+  width: 70%;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -135,12 +158,6 @@ body {
 .main_container .today .header .header_icon img {
   width: 220px;
 }
-.main_container .today .today_foracast {
-  background-color: #202B3B;
-  padding: 30px 40px;
-  border-radius: 20px;
-  flex-grow: 1;
-}
 .main_container .today .today_foracast h3 {
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
@@ -171,11 +188,6 @@ body {
   font-size: 22px;
   font-weight: 700;
 }
-.main_container .today .conditions {
-  background-color: #202B3b;
-  border-radius: 20px;
-  padding: 30px 40px;
-}
 .main_container .today .conditions h3 {
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
@@ -189,7 +201,7 @@ body {
   margin-inline: 35px;
 }
 .main_container .today .conditions_flex .condition {
-  width: 50%;
+  width: 33%;
   margin-bottom: 15px;
 }
 .main_container .today .conditions_flex .condition i {
@@ -224,12 +236,6 @@ body {
 .main_container .today .conditions_flex .minmax div span {
   margin: 0;
 }
-.main_container .forecast_container {
-  flex-grow: 1;
-  background-color: #202B3b;
-  border-radius: 20px;
-  padding: 30px 40px;
-}
 .main_container .forecast_container h3 {
   color: rgba(255, 255, 255, 0.6);
   text-transform: uppercase;
@@ -247,7 +253,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-inline: 50px;
+  padding-inline: 30px;
 }
 .main_container .forecast_container .forecast_display .forecast p {
   font-size: 22px;

@@ -133,6 +133,8 @@ function App() {
       {data && hourData && forecastData ?
       <>
         <div className="main_container">
+          <div className="glow_effect glow1"></div>
+          <div className="glow_effect glow2"></div>
           <div className='today'>
             <div className="search_container">
               <div className="search">
@@ -174,7 +176,7 @@ function App() {
                 <img src={resizeIcon(data.current.condition.icon)} alt="" />
               </div>
             </div>
-            <div className="today_foracast">
+            <div className="today_foracast section">
               <h3>Today's Forecast</h3>
               <div className="forecast_flex">
                 {
@@ -193,7 +195,7 @@ function App() {
                 }
               </div>
             </div>
-            <div className="conditions">
+            <div className="conditions section">
               <h3>Air Condition</h3>
               <div className="conditions_flex">
                 <div className="condition">
@@ -205,8 +207,15 @@ function App() {
                 </div>
                 <div className="condition">
                   <div>
-                    <i class="bi bi-droplet"></i>
+                    <i class="bi bi-cloud-rain"></i>
                     <p>Chance of Rain</p>
+                  </div>
+                  <span>{hourData.forecast.forecastday[0].day.totalprecip_mm} mm</span>
+                </div>
+                <div className="condition">
+                  <div>
+                  <i class="bi bi-droplet"></i>
+                    <p>Humidity</p>
                   </div>
                   <span>{data.current.humidity}%</span>
                 </div>
@@ -224,10 +233,17 @@ function App() {
                   </div>
                   <span>{data.current.uv}</span>
                 </div>
+                <div className="condition">
+                  <div>
+                    <i class="bi bi-cloud-sun"></i>
+                    <p>Cloud</p>
+                  </div>
+                  <span>{data.current.cloud} %</span>
+                </div>
               </div>
             </div>
           </div>
-          <div className="forecast_container">
+          <div className="forecast_container section">
             <h3>3-DAY FORECAST</h3>
             <div className="forecast_display">
             {forecastData &&
